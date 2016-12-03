@@ -1,0 +1,39 @@
+{
+  "name": "electron-react-webpack-hmr-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "run-p build:*",
+    "build:main": "cross-env NODE_ENV=production webpack -p --config webpack.config.main.babel.js",
+    "build:renderer": "cross-env NODE_ENV=production webpack -p --config webpack.config.renderer.babel.js",
+    "start": "run-p start:*",
+    "start:main": "electron --require babel-register src/main",
+    "start:renderer": "cross-env NODE_ENV=development webpack-dev-server -d --config webpack.config.renderer.babel.js"
+  },
+  "dependencies": {
+    "electron": "^1.4.10",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "^6.2.8",
+    "babel-plugin-transform-class-properties": "^6.19.0",
+    "babel-plugin-transform-object-rest-spread": "^6.19.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-register": "^6.18.0",
+    "cross-env": "^3.1.3",
+    "eslint": "^3.9.1",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.1.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.6.0",
+    "npm-run-all": "^3.1.2",
+    "react-hot-loader": "^3.0.0-beta",
+    "webpack": "^2.1.0-beta",
+    "webpack-dev-server": "^2.1.0-beta"
+  }
+}
