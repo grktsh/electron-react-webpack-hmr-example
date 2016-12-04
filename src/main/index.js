@@ -19,7 +19,9 @@ const createWindow = () => {
     }),
   );
 
-  win.webContents.openDevTools();
+  if (process.env.NODE_ENV !== 'production') {
+    win.webContents.openDevTools();
+  }
 
   win.on('closed', () => {
     // Dereference the window object, usually you would store windows
