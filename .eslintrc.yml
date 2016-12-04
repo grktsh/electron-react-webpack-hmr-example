@@ -1,4 +1,4 @@
-root: yes
+root: true
 extends: airbnb
 parser: babel-eslint
 env:
