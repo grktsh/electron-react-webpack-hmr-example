@@ -17,7 +17,7 @@ module.exports = {
     historyApiFallback: true,
     hotOnly: true,
   },
-  plugins: [
+  plugins: process.env.NODE_ENV === 'production' ? [] : [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
   ],
