@@ -17,9 +17,11 @@ export default {
     historyApiFallback: true,
     hotOnly: true,
   },
-  plugins: process.env.NODE_ENV === 'production' ? [] : [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin(),
-  ],
+  ...(process.env.NODE_ENV === 'production' ? {} : {
+    plugins: [
+      new webpack.HotModuleReplacementPlugin(),
+      new webpack.NamedModulesPlugin(),
+    ],
+  }),
   target: 'electron-renderer',
 };
