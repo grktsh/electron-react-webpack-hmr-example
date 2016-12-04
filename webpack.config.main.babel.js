@@ -1,8 +1,8 @@
-const path = require('path');
+import path from 'path';
 
-const baseConfig = require('./webpack.config.base');
+import baseConfig from './webpack.config.base';
 
-module.exports = {
+export default {
   ...baseConfig,
   entry: {
     main: path.join(__dirname, 'src/main'),

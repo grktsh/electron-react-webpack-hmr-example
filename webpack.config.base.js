@@ -1,5 +1,5 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
 const getBabelLoader = () => {
   const baseOptions = JSON.parse(fs.readFileSync(path.join(__dirname, '.babelrc'), 'utf-8'));
@@ -16,7 +16,7 @@ const getBabelLoader = () => {
   };
 };
 
-module.exports = {
+export default {
   output: {
     path: path.join(__dirname, 'public'),
     filename: '[name].js',
